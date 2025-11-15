@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cursos en línea de Automatización | Academia de Automatización</title>
+  <meta name="description" content="Cursos online de Automatización Industrial: PLC, HMI/SCADA, sensores, visión artificial, robótica y más. Clases en vivo y bajo demanda con proyectos prácticos." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0d10; --panel:#11141a; --muted:#2a2f3a; --text:#e7ecf3; --sub:#b6c2d0; --brand:#22c55e; --brand-2:#0ea5e9; --accent:#f59e0b; --danger:#ef4444;
+      --radius:18px; --radius-lg:28px; --shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0; padding:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial; color:var(--text); background:linear-gradient(180deg,#07080b 0%, #0b0d10 60%, #0b0d10 100%);} 
+    a{color:inherit; text-decoration:none}
+    .container{width:min(1200px,92%); margin:0 auto}
+    header{position:sticky; top:0; z-index:50; backdrop-filter: blur(10px); background:rgba(11,13,16,.7); border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:16px 0}
+    .logo{display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.3px}
+    .logo-badge{width:38px; height:38px; border-radius:12px; background:linear-gradient(135deg,var(--brand),var(--brand-2)); display:grid; place-items:center; box-shadow:var(--shadow)}
+    .logo-badge svg{filter:drop-shadow(0 2px 6px rgba(0,0,0,.35))}
+    .menu{display:flex; gap:18px; align-items:center}
+    .menu a{padding:10px 14px; color:var(--sub)}
+    .menu a:hover{color:var(--text)}
+    .btn{display:inline-flex; align-items:center; gap:10px; padding:12px 18px; border-radius:14px; background:var(--brand); color:#08140c; font-weight:700; border:1px solid rgba(255,255,255,.06); box-shadow:0 10px 20px rgba(34,197,94,.3)}
+    .btn.secondary{background:transparent; color:var(--text); border:1px solid rgba(255,255,255,.12)}
+    .btn.ghost{background:transparent; color:var(--sub); border:1px dashed rgba(255,255,255,.15)}
+    .hero{padding:72px 0 36px; position:relative}
+    .hero-grid{display:grid; grid-template-columns:1.15fr .85fr; gap:28px; align-items:center}
+    .badge{display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px; background:rgba(34,197,94,.15); color:#b5f5cd; border:1px solid rgba(34,197,94,.35); font-weight:600}
+    h1{font-size:clamp(28px,4.3vw,50px); line-height:1.06; margin:14px 0 10px}
+    .sub{color:var(--sub); font-size:clamp(14px,1.6vw,18px)}
+    .hero-cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
+    .card{background:linear-gradient(180deg,#0f1319, #0b0d10); border:1px solid rgba(255,255,255,.07); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow)}
+    .glass{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08)}
+    .mockup{min-height:360px; border-radius:var(--radius-lg); border:1px solid rgba(255,255,255,.08); background:
+      radial-gradient(80% 70% at 0% 0%, rgba(34,197,94,.18), transparent 40%),
+      radial-gradient(80% 70% at 100% 100%, rgba(14,165,233,.18), transparent 40%),
+      linear-gradient(180deg,#0d1218,#0b0d10);
+      display:grid; place-items:center; overflow:hidden; position:relative}
+    .mockup img{width:90%; max-width:620px; opacity:.95}
+    .trust{display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin:12px 0 0}
+    .trust .mini{height:60px; border-radius:14px; border:1px dashed rgba(255,255,255,.12); display:grid; place-items:center; color:var(--sub)}
+    section{padding:54px 0}
+    h2{font-size:clamp(22px,3.1vw,34px); margin:0 0 12px}
+    .kicker{color:var(--accent); font-weight:800; letter-spacing:.12em; text-transform:uppercase; font-size:12px}
+    .grid{display:grid; gap:16px}
+    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+    .grid.cols-2{grid-template-columns:repeat(2,1fr)}
+    .feature{display:flex; gap:12px}
+    .feature .icon{width:42px; height:42px; border-radius:12px; background:rgba(255,255,255,.06); display:grid; place-items:center}
+    .course{display:flex; flex-direction:column; gap:12px}
+    .course .tags{display:flex; gap:8px; flex-wrap:wrap}
+    .tag{font-size:12px; padding:6px 10px; border:1px solid rgba(255,255,255,.12); border-radius:999px; color:var(--sub)}
+    .price{font-weight:900; font-size:22px}
+    .steps{display:grid; grid-template-columns:repeat(4,1fr); gap:12px}
+    .step{padding:18px; border-radius:16px; border:1px solid rgba(255,255,255,.08); background:linear-gradient(180deg,#0e1218,#0b0d10)}
+    .testimonial{display:flex; gap:12px; align-items:flex-start}
+    .avatar{width:44px; height:44px; border-radius:50%; background:linear-gradient(135deg,#22c55e,#0ea5e9)}
+    .pricing{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+    .tier{padding:22px; border-radius:20px; border:1px solid rgba(255,255,255,.1); background:linear-gradient(180deg,#0f141b,#0b0d10)}
+    .tier.pop{border-color:rgba(34,197,94,.5); box-shadow:0 10px 30px rgba(34,197,94,.25)}
+    ul.check{list-style:none; padding:0; margin:8px 0 0}
+    ul.check li{margin:10px 0; color:var(--sub)}
+    ul.check li::before{content:'✓'; margin-right:8px; color:var(--brand)}
+    .faq{display:grid; gap:10px}
+    .faq-item{border:1px solid rgba(255,255,255,.1); border-radius:14px; overflow:hidden}
+    .faq-q{display:flex; justify-content:space-between; align-items:center; padding:14px 16px; cursor:pointer; background:rgba(255,255,255,.03)}
+    .faq-a{padding:0 16px 14px; display:none; color:var(--sub)}
+    .contact{display:grid; grid-template-columns:1.1fr .9fr; gap:16px}
+    form input, form textarea{width:100%; padding:14px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.12); background:#0b0f14; color:var(--text)}
+    form textarea{min-height:120px}
+    .footer{border-top:1px solid rgba(255,255,255,.08); padding:24px 0; color:var(--sub)}
+    .chips{display:flex; gap:8px; flex-wrap:wrap}
+    .chip{border:1px solid rgba(255,255,255,.12); color:var(--sub); padding:6px 10px; border-radius:999px; font-size:12px}
+    .pill{display:inline-flex; align-items:center; gap:8px; padding:10px 12px; border-radius:999px; border:1px dashed rgba(255,255,255,.12); color:var(--sub)}
+    .toggle{border:1px solid rgba(255,255,255,.1); padding:8px 10px; border-radius:12px}
+    @media (max-width:980px){
+      .hero-grid, .contact{grid-template-columns:1fr}
+      .steps{grid-template-columns:repeat(2,1fr)}
+      .grid.cols-3{grid-template-columns:1fr 1fr}
+      .pricing{grid-template-columns:1fr}
+    }
+    @media (max-width:640px){
+      .grid.cols-3, .grid.cols-2{grid-template-columns:1fr}
+      .steps{grid-template-columns:1fr}
+      .trust{grid-template-columns:repeat(2,1fr)}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="logo">
+        <div class="logo-badge" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 12h6l2 3 2-6 2 3h4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <span>Academia de Automatización</span>
+      </div>
+      <nav class="menu">
+        <a href="#cursos">Cursos</a>
+        <a href="#beneficios">Beneficios</a>
+        <a href="#precios">Precios</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contacto" class="btn secondary">Contáctanos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="badge">100% online · Proyectos reales · Certificado</span>
+          <h1>Domina la Automatización Industrial desde cero hasta experto</h1>
+          <p class="sub">Aprende PLC (Siemens/Allen‑Bradley), HMI/SCADA, sensores, visión artificial, redes industriales, control PID y más. Clases en vivo y bajo demanda con ejercicios prácticos y acompañamiento.</p>
+          <div class="hero-cta">
+            <a href="#cursos" class="btn">Ver catálogo</a>
+            <a href="#demo" class="btn ghost">Agendar demo</a>
+          </div>
+          <div style="margin-top:14px" class="chips">
+            <div class="chip">Proyectos guiados</div>
+            <div class="chip">Descargables</div>
+            <div class="chip">Soporte por comunidad</div>
+            <div class="chip">Acceso de por vida</div>
+          </div>
+        </div>
+        <div>
+          <div class="mockup">
+            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1600&auto=format&fit=crop" alt="Panel de control industrial y PLC" loading="lazy"/>
+          </div>
+          <div class="trust">
+            <div class="mini">Siemens</div>
+            <div class="mini">Rockwell</div>
+            <div class="mini">Keyence</div>
+            <div class="mini">NI LabVIEW</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="beneficios">
+      <div class="container">
+        <div class="kicker">Beneficios</div>
+        <h2>Aprendizaje práctico y aplicado</h2>
+        <div class="grid cols-3">
+          <div class="card feature">
+            <div class="icon">🔧</div>
+            <div>
+              <strong>Enfoque hands‑on</strong>
+              <p class="sub">Cada módulo culmina en un mini‑proyecto con hardware o simulación (TIA Portal, Factory I/O, Logix, NX, etc.).</p>
+            </div>
+          </div>
+          <div class="card feature">
+            <div class="icon">🎥</div>
+            <div>
+              <strong>Clases en vivo + on‑demand</strong>
+              <p class="sub">Sesiones sincrónicas grabadas, foros y retos semanales para consolidar lo aprendido.</p>
+            </div>
+          </div>
+          <div class="card feature">
+            <div class="icon">🧭</div>
+            <div>
+              <strong>Rutas de aprendizaje</strong>
+              <p class="sub">De "Fundamentos" a "Especialista": PLC, HMI/SCADA, visión, robótica y IIoT.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cursos">
+      <div class="container">
+        <div class="kicker">Catálogo</div>
+        <h2>Cursos disponibles</h2>
+        <div class="grid cols-3">
+          <div class="card course">
+            <div style="height:140px; border-radius:14px; background:url('https://images.unsplash.com/photo-1542996966-2e31c00bae5f?q=80&w=1600&auto=format&fit=crop') center/cover"></div>
+            <h3>PLC con Siemens S7‑1200 + TIA Portal</h3>
+            <div class="tags">
+              <span class="tag">Nivel: Básico‑Intermedio</span>
+              <span class="tag">40 h</span>
+            </div>
+            <p class="sub">Ladder, funciones, HMI KTP, redes PROFINET, diagnósticos y prácticas con simulación.</p>
+            <div class="price">$3,200 MXN</div>
+            <div>
+              <a class="btn" href="#inscribir">Inscribirme</a>
+              <a class="btn secondary" href="#temario">Temario</a>
+            </div>
+          </div>
+          <div class="card course">
+            <div style="height:140px; border-radius:14px; background:url('https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?q=80&w=1600&auto=format&fit=crop') center/cover"></div>
+            <h3>HMI & SCADA (WinCC / FactoryTalk)</h3>
+            <div class="tags">
+              <span class="tag">Nivel: Intermedio</span>
+              <span class="tag">32 h</span>
+            </div>
+            <p class="sub">Diseño de pantallas, alarmas, recetas, tendencias, y comunicación con PLCs.</p>
+            <div class="price">$2,800 MXN</div>
+            <div>
+              <a class="btn" href="#inscribir">Inscribirme</a>
+              <a class="btn secondary" href="#temario">Temario</a>
+            </div>
+          </div>
+          <div class="card course">
+            <div style="height:140px; border-radius:14px; background:url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1600&auto=format&fit=crop') center/cover"></div>
+            <h3>Sensores &amp; Visión Artificial (Keyence)</h3>
+            <div class="tags">
+              <span class="tag">Nivel: Intermedio‑Avanzado</span>
+              <span class="tag">36 h</span>
+            </div>
+            <p class="sub">Métodos de iluminación, óptica, integración PLC, inspecciones y trazabilidad.</p>
+            <div class="price">$3,400 MXN</div>
+            <div>
+              <a class="btn" href="#inscribir">Inscribirme</a>
+              <a class="btn secondary" href="#temario">Temario</a>
+            </div>
+          </div>
+          <div class="card course">
+            <div style="height:140px; border-radius:14px; background:url('https://images.unsplash.com/photo-1520607162513-3971060c334a?q=80&w=1600&auto=format&fit=crop') center/cover"></div>
+            <h3>Control PID aplicado</h3>
+            <div class="tags">
+              <span class="tag">Nivel: Intermedio</span>
+              <span class="tag">24 h</span>
+            </div>
+            <p class="sub">Modelado, sintonía y casos prácticos con simuladores y controladores reales.</p>
+            <div class="price">$2,500 MXN</div>
+            <div>
+              <a class="btn" href="#inscribir">Inscribirme</a>
+              <a class="btn secondary" href="#temario">Temario</a>
+            </div>
+          </div>
+          <div class="card course">
+            <div style="height:140px; border-radius:14px; background:url('https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1600&auto=format&fit=crop') center/cover"></div>
+            <h3>Arduino para Automatización</h3>
+            <div class="tags">
+              <span class="tag">Nivel: Básico</span>
+              <span class="tag">20 h</span>
+            </div>
+            <p class="sub">Entradas/salidas, relés, comunicación serial y protocolos para celdas didácticas.</p>
+            <div class="price">$1,800 MXN</div>
+            <div>
+              <a class="btn" href="#inscribir">Inscribirme</a>
+              <a class="btn secondary" href="#temario">Temario</a>
+            </div>
+          </div>
+          <div class="card course">
+            <div style="height:140px; border-radius:14px; background:url('https://images.unsplash.com/photo-1553406830-ef2513450d76?q=80&w=1600&auto=format&fit=crop') center/cover"></div>
+            <h3>IIoT &amp; Redes Industriales</h3>
+            <div class="tags">
+              <span class="tag">Nivel: Avanzado</span>
+              <span class="tag">30 h</span>
+            </div>
+            <p class="sub">OPC UA, MQTT, Edge, dashboards y ciberseguridad básica para planta.</p>
+            <div class="price">$3,600 MXN</div>
+            <div>
+              <a class="btn" href="#inscribir">Inscribirme</a>
+              <a class="btn secondary" href="#temario">Temario</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ruta">
+      <div class="container">
+        <div class="kicker">Ruta</div>
+        <h2>¿Cómo funciona?</h2>
+        <div class="steps">
+          <div class="step"><strong>1. Elige</strong><p class="sub">Selecciona un curso o ruta completa.</p></div>
+          <div class="step"><strong>2. Aprende</strong><p class="sub">Videos, actividades y proyectos.</p></div>
+          <div class="step"><strong>3. Aplica</strong><p class="sub">Proyecto final con retroalimentación.</p></div>
+          <div class="step"><strong>4. Certifica</strong><p class="sub">Obtén tu constancia al concluir.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="precios">
+      <div class="container">
+        <div class="kicker">Precios</div>
+        <h2>Planes y membresías</h2>
+        <div class="pricing">
+          <div class="tier">
+            <h3>Individual</h3>
+            <div class="price">$1,800–$3,600 MXN / curso</div>
+            <ul class="check">
+              <li>Acceso de por vida</li>
+              <li>Actualizaciones del curso</li>
+              <li>Soporte por email</li>
+            </ul>
+            <div style="margin-top:14px"><a class="btn" href="#checkout">Elegir</a></div>
+          </div>
+          <div class="tier pop">
+            <h3>Membresía Pro</h3>
+            <div class="price">$699 MXN / mes</div>
+            <ul class="check">
+              <li>Todo el catálogo</li>
+              <li>Sesiones en vivo mensuales</li>
+              <li>Canal privado de soporte</li>
+            </ul>
+            <div style="margin-top:14px"><a class="btn" href="#checkout">Comenzar</a></div>
+          </div>
+          <div class="tier">
+            <h3>Empresas</h3>
+            <div class="price">Cotización</div>
+            <ul class="check">
+              <li>Licencias por equipo</li>
+              <li>Capacitación a medida</li>
+              <li>Reportes de progreso</li>
+            </ul>
+            <div style="margin-top:14px"><a class="btn secondary" href="#contacto">Solicitar demo</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonios">
+      <div class="container">
+        <div class="kicker">Experiencias</div>
+        <h2>Lo que dicen nuestros alumnos</h2>
+        <div class="grid cols-3">
+          <div class="card testimonial">
+            <div class="avatar"></div>
+            <div>
+              <strong>María P. · Ing. Electromecánica</strong>
+              <p class="sub">“El curso de S7‑1200 me ayudó a conseguir prácticas profesionales. Los proyectos fueron clave.”</p>
+            </div>
+          </div>
+          <div class="card testimonial">
+            <div class="avatar"></div>
+            <div>
+              <strong>Jorge L. · Automatización</strong>
+              <p class="sub">“Excelente combinación de teoría y práctica. El soporte es rápido y claro.”</p>
+            </div>
+          </div>
+          <div class="card testimonial">
+            <div class="avatar"></div>
+            <div>
+              <strong>Ana R. · Mantenimiento</strong>
+              <p class="sub">“Pude implementar un SCADA básico en mi planta tras el curso. Muy recomendado.”</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="instructor">
+      <div class="container">
+        <div class="kicker">Instructor</div>
+        <h2>Sobre el instructor</h2>
+        <div class="grid cols-2">
+          <div class="card">
+            <h3>Carlos López</h3>
+            <p class="sub">Ingeniero en Automatización con experiencia en PLCs Siemens S7‑1200, HMI/SCADA, visión artificial Keyence, instrumentación y proyectos académicos/industriales. Enfoque didáctico, aplicado y basado en proyectos.</p>
+            <div class="chips">
+              <div class="chip">PLC · HMI/SCADA</div>
+              <div class="chip">Visión Artificial</div>
+              <div class="chip">IIoT</div>
+              <div class="chip">LabVIEW</div>
+            </div>
+          </div>
+          <div class="card">
+            <h3>¿Qué obtendrás?</h3>
+            <ul class="check">
+              <li>Acceso de por vida a los materiales</li>
+              <li>Plantillas, códigos y proyectos base</li>
+              <li>Retroalimentación en proyectos clave</li>
+              <li>Constancia de finalización</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div class="kicker">FAQ</div>
+        <h2>Preguntas frecuentes</h2>
+        <div class="faq">
+          <div class="faq-item">
+            <div class="faq-q">¿Necesito hardware real?<span>+</span></div>
+            <div class="faq-a">No es obligatorio. Usaremos simuladores como TIA Portal PLCSIM y Factory I/O. Si tienes PLC/HMI, podrás realizar prácticas extra.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">¿Las clases quedan grabadas?<span>+</span></div>
+            <div class="faq-a">Sí. Tendrás acceso a las grabaciones y materiales descargables.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">¿Entregan factura?<span>+</span></div>
+            <div class="faq-a">Para México, sí. Tras tu compra podrás solicitar CFDI con tus datos fiscales.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <div class="container">
+        <div class="kicker">Contacto</div>
+        <h2>¿Listo para empezar?</h2>
+        <div class="contact">
+          <div class="card">
+            <form onsubmit="event.preventDefault(); alert('¡Gracias! Te contactaremos en breve.'); this.reset();">
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px">
+                <div>
+                  <label>Nombre</label>
+                  <input required placeholder="Tu nombre"/>
+                </div>
+                <div>
+                  <label>Email</label>
+                  <input type="email" required placeholder="tu@email.com"/>
+                </div>
+              </div>
+              <div style="margin-top:12px">
+                <label>Mensaje</label>
+                <textarea placeholder="Cuéntame qué curso te interesa o si eres empresa"></textarea>
+              </div>
+              <div style="display:flex; gap:10px; margin-top:14px">
+                <button class="btn" type="submit">Enviar</button>
+                <a class="btn secondary" href="https://wa.me/0000000000" target="_blank" rel="noopener">WhatsApp</a>
+              </div>
+              <div style="margin-top:10px" class="pill">Tiempo de respuesta: &lt; 24 h</div>
+            </form>
+          </div>
+          <div class="card glass">
+            <h3 id="demo">Agenda una demo</h3>
+            <p class="sub">Programa una llamada de 15 minutos para conocer tus objetivos y recomendarte una ruta personalizada.</p>
+            <a class="btn" href="#">Agendar en Calendario</a>
+            <div style="margin-top:14px" class="chips">
+              <div class="chip">Zoom / Meet</div>
+              <div class="chip">Asesoría gratuita</div>
+              <div class="chip">Plan personalizado</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container" style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap">
+      <div>© <span id="year"></span> Academia de Automatización — Todos los derechos reservados</div>
+      <div class="chips">
+        <a class="chip" href="#">Términos</a>
+        <a class="chip" href="#">Privacidad</a>
+        <a class="chip" href="#">Soporte</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Año dinámico
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Smooth anchors
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id = a.getAttribute('href');
+        if(id && id.length>1){
+          const el = document.querySelector(id);
+          if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
+        }
+      })
+    })
+    // FAQ accordion
+    document.querySelectorAll('.faq-item').forEach(item=>{
+      const q=item.querySelector('.faq-q');
+      const a=item.querySelector('.faq-a');
+      q.addEventListener('click',()=>{
+        const open=a.style.display==='block';
+        document.querySelectorAll('.faq-a').forEach(x=>x.style.display='none');
+        a.style.display=open?'none':'block';
+      })
+    })
+  </script>
+</body>
+</html>
